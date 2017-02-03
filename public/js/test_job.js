@@ -18,10 +18,6 @@ var job = new CronJob('* * * * *', function() {
         console.log('response status: ' + response.statusCode)
         console.log(Date());
         console.log('');
-
-        System.out.println('request url: ' + url);
-        System.out.println('response status: ' + response.statusCode);
-        System.out.println('');
       };
     });
   };
@@ -39,8 +35,6 @@ var job = new CronJob('* * * * *', function() {
   console.log('-------------------------------');
   console.log('TEST_JOB.JS HAS STOPPED RUNNING')
   console.log(Date());
-
-  System.out.println('TEST_JOB.JS HAS STOPPED RUNNING');
 });
 
 job.start();
