@@ -1,6 +1,7 @@
 
 var CronJob = require('cron').CronJob;
-var job = new CronJob('1,31 6-23 * * *', function() {
+// var job = new CronJob('1,31 6-23 * * *', function() {
+var job = new CronJob('* * * * *', function() {
 
   var request = require('request');
   var urls = new Array(
@@ -17,6 +18,10 @@ var job = new CronJob('1,31 6-23 * * *', function() {
         console.log('response status: ' + response.statusCode)
         console.log(Date());
         console.log('');
+
+        System.out.println('request url: ' + url);
+        System.out.println('response status: ' + response.statusCode);
+        System.out.println('');
       };
     });
   };
@@ -29,7 +34,13 @@ var job = new CronJob('1,31 6-23 * * *', function() {
   console.log('');
 
 }, function () {
-  /* This function is executed when the job stops */
+  console.log('');
+  console.log('');
+  console.log('-------------------------------');
+  console.log('TEST_JOB.JS HAS STOPPED RUNNING')
+  console.log(Date());
+
+  System.out.println('TEST_JOB.JS HAS STOPPED RUNNING');
 });
 
 job.start();
