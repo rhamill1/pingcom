@@ -7,6 +7,7 @@ var urls = new Array(
   'http://womensmarchtweets.herokuapp.com/'
 );
 
+
 function scrape(url){
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -18,7 +19,18 @@ function scrape(url){
   });
 };
 
-for (var i = 0; i < urls.length; i++) {
-  var url = urls[i];
-  scrape(url);
+
+var now = new Date();
+var currentMinutes = now.getMinutes().toString();
+var tenMinuteStartInt = currentMinutes.charAt(0);
+
+if (tenMinuteStartInt == 0 || tenMinuteStartInt == 3) {
+
+  for (var i = 0; i < urls.length; i++) {
+    var url = urls[i];
+    scrape(url);
+  };
+} else {
+
+  return now + ' pingcom.js executed by Heroku Scheduler. Applications are already active. Process gracefully terminated.';
 };
