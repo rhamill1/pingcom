@@ -32,5 +32,6 @@ if (tenMinuteStartInt == 0 || tenMinuteStartInt == 3) {
   };
 } else {
 
-  return now + ' pingcom.js executed by Heroku Scheduler. Applications are already active. Process gracefully terminated.';
+  console.log(Date());
+  console.log('pingcom.js executed by Heroku Scheduler. Applications are already active. Process gracefully terminated.');
 };
