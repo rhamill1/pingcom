@@ -15,7 +15,8 @@ app.listen(process.env.PORT || 8000, function () {
 
 
 var CronJob = require('cron').CronJob;
-var job = new CronJob('1,31 6-23 * * *', function() {
+var job = new CronJob('1,31 * * * *', function() {
+// var job = new CronJob('1,31 6-23 * * *', function() {
 
   var request = require('request');
   var urls = new Array(
