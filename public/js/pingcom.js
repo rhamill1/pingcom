@@ -24,7 +24,8 @@ var now = new Date();
 var currentMinutes = now.getMinutes().toString();
 var tenMinuteStartInt = currentMinutes.charAt(0);
 
-if (tenMinuteStartInt == 0 || tenMinuteStartInt == 3) {
+console.log(tenMinuteStartInt);
+if (tenMinuteStartInt == 1 || tenMinuteStartInt == 4) {
 
   for (var i = 0; i < urls.length; i++) {
     var url = urls[i];
